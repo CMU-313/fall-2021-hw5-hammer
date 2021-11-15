@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - master
+      - pyFlake
   pull_request:
     branches:
       - master
+      - pyFlake
   workflow_dispatch:
 jobs:
   build:
@@ -16,3 +18,5 @@ jobs:
       run: make docker-build
     - name: Run tests
       run: make docker-runtest-all
+    - name: PyFlake syntax checker
+      uses: lgeiger/pyflakes-action@v1.0.1
