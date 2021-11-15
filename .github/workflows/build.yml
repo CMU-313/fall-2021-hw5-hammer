@@ -16,9 +16,8 @@ jobs:
 #       run: make docker-build
 #     - name: Run tests
 #       run: make docker-runtest-all
-    - name: Coverage action
-      run: make docker-compose-build
-           make docker-compose-up
-           pip3 install coverage
-           make coverage-run
-           make coverage-html
+    - run: make docker-compose-build
+    - run: make docker-compose-up
+    - run: pip3 install coverage
+    - run: make coverage-run
+    - run: make coverage-html
