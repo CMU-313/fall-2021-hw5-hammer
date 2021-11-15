@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     #- name: Build docker image       
-    - run: make docker-build
+    - run: make python-build
 #     - name: Run tests
 #       run: make docker-runtest-all
     # - run: make docker-compose-build
