@@ -17,5 +17,6 @@ jobs:
 #     - name: Run tests
 #       run: make docker-runtest-all
     - name: Coverage action
-      run: make coverage-run
+      run: pip install coverage
+           make coverage-run
            make coverage-html
