@@ -12,7 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build docker image
-      run: make docker-build
-    - name: Run tests
-      run: make docker-runtest-all
+    #- name: Build docker image       
+    - run: make setup-dev-environment
+#     - name: Run tests
+#       run: make docker-runtest-all
+    # - run: make docker-compose-build
+    # - run: make docker-compose-up
+    - run: pip3 install coverage
+    - run: make coverage-run
+    - run: make coverage-html
