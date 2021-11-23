@@ -12,7 +12,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
-    - name: Build docker image
-      run: make docker-build
-    - name: Run tests
-      run: make docker-runtest-all
+    - name: Setup
+      uses: actions/setup-python@v1
+      with:
+         python-version: 3.7
+    - name: install
+      run: pip install django pylint pylint-django pylint-fail-under
+    - name: report
+      run: pylint-fail-under --fail_under 7.0 --msg-template='{msg_id}, {column} {obj} {msg}' --load-plugins pylint_django mayan/apps/cabinets/
+
