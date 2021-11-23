@@ -19,5 +19,5 @@ jobs:
     - name: install
       run: pip install django pylint pylint-django pylint-fail-under
     - name: report
-      run: pylint-fail-under --fail_under 3.0 --msg-template='{msg_id}, {column} {obj} {msg}' --load-plugins pylint_django mayan/apps/cabinets/
+      run: pylint-fail-under --fail_under 7.0 --msg-template='{msg_id}, {column} {obj} {msg}' --load-plugins pylint_django mayan/apps/cabinets/
 
